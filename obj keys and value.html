@@ -1,0 +1,33 @@
+<script>
+
+    let country_codes = {
+        '091': 'IN',
+        '044': 'US',
+        '049': ['IQ', 'IN', 'POK'],
+        '0199': ['ML', 'TY'],
+        '0399': null
+    }
+
+    let country_codes_new = {
+        '035': 'ES',
+        '457': 'EP'
+    }
+
+    let newContry = Object.assign(country_codes, country_codes_new)
+
+    let myKey = null
+
+    // console.log(myKey.length)
+
+    console.log(Object.keys(newContry))
+
+    Object.keys(country_codes).forEach(function (key) {
+        if (country_codes[key] !== null) {
+            if (country_codes[key].length > 2) {
+                console.log(key)
+            }
+        }
+
+    })
+
+</script>

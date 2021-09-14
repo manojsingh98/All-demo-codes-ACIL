@@ -1,0 +1,49 @@
+<script>
+//call methode
+
+    let obj = { fname: 'Acil',
+lname: 'Technologies',
+middleName : function() {
+return this.fname.toLowerCase()
+}
+}
+let objNew = { fname: 'One',
+fullName: function(age) {
+return this.fname + ' ' + this.lname + ' - ' + age
+}
+}
+console.log(objNew.fullName.call(obj, 26)) 
+
+//Apply methode
+
+let obj = {
+fname: 'Acil',
+lname: 'Technologies',
+middleName : function() {
+return this.fname.toLowerCase()
+}
+}
+
+let objNew = {
+fullName: function(age) {
+console.log(this.fname, age)
+}
+}
+
+objNew.fullName.apply(obj, [26])
+
+//Bind methode
+
+let obj = {
+fname: 'Acil',
+lname: 'Tecnologies'
+}
+
+function getFullNames() {
+return this.fname + '' + this.lname
+}
+
+let newFunction = getFullNames.bind(obj)
+
+console.log(newFunction())
+</script>

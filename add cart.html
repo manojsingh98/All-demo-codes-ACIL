@@ -1,0 +1,90 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="container"><br />
+<div id="msg"></div>
+<input type="text" class="form-control" id="sku" placeholder="Product SKU" /><br />
+<input type="text" class="form-control" id="name" placeholder="Product Name" /><br />
+<input type="text" class="form-control" id="stock" placeholder="Stock" /><br />
+<input type="text" class="form-control" id="price" placeholder="price" /><br />
+<button type="button" onclick="addProductData()" class="btn btn-primary">Add Products</button><br />
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product SKU</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody id="product_listing">
+    
+    </tbody>
+  </table>
+
+<script>
+
+
+let productData =  JSON.parse(localStorage.getItem('products')) || []
+let i = productData.length || 0
+
+function addProductData() {   
+    i += 1 
+    let obj = {
+        id: i,
+        sku : document.getElementById('sku').value,
+        name : document.getElementById('name').value,
+        stock : document.getElementById('stock').value,
+        price : document.getElementById('price').value
+    }
+    let dublicate = false
+    for(var n of productData) {
+        if(n.sku == obj.sku) {
+            dublicate = true
+        }
+    }
+    if(dublicate == false) {
+        productData.push(obj)
+        localStorage.setItem('products', JSON.stringify(productData))  
+        document.getElementById('msg').innerHTML = `
+        <div class="alert alert-success" role="alert">
+            Product Added
+        </div>
+        `    
+        setTimeout(()=>{
+            window.location.reload(false)
+        },100)
+    } else {
+        document.getElementById('msg').innerHTML = `
+        <div class="alert alert-danger" role="alert">
+            Sorry Dublicate Product Found
+        </div>
+        `
+    } 
+
+}
+
+function showProductData() {
+    productData.forEach(function(val){
+        document.getElementById('product_listing').innerHTML = `
+        <tr>
+            <td>${val.id}</td>
+            <td>${val.sku}</td>
+            <td>${val.name}</td>
+            <td>${val.stock}</td>
+            <td>${val.price}</td>
+            <td>
+                <button type="button" class="btn btn-secondary">Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        `
+    })
+}
+
+showProductData()
+
+ 
+</script>

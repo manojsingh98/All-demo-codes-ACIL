@@ -1,0 +1,58 @@
+import React, { Component } from "react";
+import { getProductData, getProductByCategoryId, getCategoryData } from './services/api/product.api'
+import Product from './component/product/product.component'
+
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+      cname: 'ACIL TECHNOLOGIES',
+      count: 0
+    }
+  }
+
+ updateCount = () => {
+    this.setState({count: this.state.count + 1})
+ }
+
+  render() {
+    return (
+      <>
+          <Header updateCount={()=>this.updateCount()} />
+          <Footer name={this.state.cname} count={this.state.count} />
+            
+      </>
+    )
+  }
+}
+
+
+class Header extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <button onClick={()=> this.props.updateCount()}>Update Count</button>
+
+      </React.Fragment>
+    )
+  }
+}
+
+
+class Footer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      companyName : props.name
+    }
+  }
+  render() {
+    return (
+      <h1>Company Name is : {this.state.companyName} - {this.props.count} </h1>
+    )
+  }
+}

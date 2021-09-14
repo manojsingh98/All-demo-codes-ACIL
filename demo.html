@@ -1,0 +1,53 @@
+ 
+
+<script>
+
+
+
+let contact_no = {
+    91 : 'India',
+    44 : 'Iraq'
+}
+
+//Object.freeze(contact_no)
+
+//Object.seal(contact_no)
+
+contact_no[91] = 'USA'
+
+// console.log(Object.isFrozen(contact_no))
+
+console.log(Object.isSealed(contact_no))
+
+// delete contact_no[44]
+
+console.log(contact_no)
+
+// Object.freeze(contact_no)
+
+// let new_contact = Object.create(contact_no)
+
+// new_contact[1] = 'USA'
+    
+// console.log(new_contact[44])
+
+
+// for(var [key, value] of Object.entries(contact_no)) {
+//     console.log(value)
+// }
+
+// Object.keys(contact_no).forEach(function(val){
+//     console.log(val)
+// })
+
+
+// Object.values(contact_no).forEach(function(val){
+//     console.log(val)
+// })
+
+
+//console.log(contact_no)
+
+
+
+</script>

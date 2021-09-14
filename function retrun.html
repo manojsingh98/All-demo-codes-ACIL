@@ -1,0 +1,192 @@
+<script>
+
+    // let data = {
+    //     name: 'Acil Technologies',
+    //     year: 2012
+    // }
+
+
+    function getName(e,h,m) {
+        let marks = e+h+m
+        let name = 'sahil'
+        let age = 10
+        return {
+            name: name,
+            age: age,
+            marks : marks
+        }
+    }
+
+    console.log(getName(10,20,30).marks, getName(10,20,30).age)
+
+
+// let name = 'Acil Technologies'
+
+// function getFullName() {
+//     return 'Hello'
+//     return 'My Full Name is Acil'
+// }
+
+// const getAllData = () => {
+//     return 'Hello'
+// }
+
+
+// function getResult(){
+//    /// console.log(a)
+//     return function() {
+//         return function(a,b,c) {
+//             return a+b+c
+//         }
+//     }
+// }
+
+
+// function getMarks() {
+//     return ()=> {
+//         return () => {
+//             return () => 'Hello World'
+//         }
+//     }
+// }
+
+
+
+
+// let one = true
+
+// // one? alert('Hello'):alert('HI')
+
+
+// let newData = () => one? 1 : 0
+
+
+// let newDataFx = () => {
+//     return () => one? () => 'Hello' : () => 'Hi'
+// }
+
+
+// let data = `${newDataFx()()()}`
+
+// console.log(data)
+
+
+
+// function showClass() {
+//     return class {
+//         hide() {
+//             console.log('asdfasdfadsf')
+//         }
+//     }
+// }
+
+
+// console.log(showClass())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let defaultdata = [{},{}]
+
+// let path = 'https://www.firstindiapropmart.com/admin/api/galatron-apis.php?'
+// let category = '2'
+
+// function demoPromiseFx(url, method = 'GET') {
+//     return new Promise(function(resolve, reject){
+//          return fetch(url, {
+//              method: method
+//          })
+//         .then(res=>res.json())
+//         .then(function(data){
+//             if(data.status == '200') {
+//                 resolve(data)
+//             } else {
+//                 reject(defaultdata)
+//             }
+//         })
+//         .catch((err) => reject('There some problem with internet connect, Please refresh again'))
+//     })
+// }
+
+
+// demoPromiseFx(`${path}type=productbyCatId&category_id=${category}`, 'POST')
+// .then((res)=>res.data)
+// .then((data) => console.log(data))
+// .catch((err)=>console.log(err))
+
+// demoPromiseFx('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products')
+// .then((res)=>res.data)
+// .then((data) => console.log(data))
+// .catch((err)=>console.log(err))
+
+
+// // let selectedStudent = ['12451','32542','98744']
+// // function getRanking(rollno) {
+// //     return new Promise(function(resolve, reject){
+// //         if(selectedStudent.includes(rollno)){
+// //             resolve()
+// //         } else {
+// //             reject()
+// //         }
+// //     })
+// // }
+
+
+// // function checkRanking() {
+// //     let rollno = document.getElementById('rollno').value
+// //     getRanking(rollno)
+// //     .then(res=> console.log('You are selected'))
+// //     .catch(err=> console.log('You are Not selected'))
+// // }
+
+
+
+
+// // function getResult(marks) {
+// //     return new Promise(function(resolve, reject){
+// //          if(marks > 75) {
+// //              resolve(marks)
+// //          } else {
+// //             reject()
+// //          }
+// //     })
+// // }
+
+
+// // getResult(97)
+// // .then(res=>console.log(res))
+// // .catch(err=>console.log('Please choose Another Student'))
+
+
+
+
+
+// // let data = new Promise(function(res, rej){
+
+// // })
+
+
+
+</script>

@@ -1,0 +1,59 @@
+<script>
+
+let data = ['apple','banana','grapes','orange','peas',65,78]
+
+let number = [10,30,20,15,18,90,5]
+
+
+let newMapData = data.map(function(values, index, array){
+    return values
+})
+
+// console.log(newMapData)
+
+
+let newForEachData = data.forEach(function(values, index, array){
+    return values
+})
+
+// console.log(newForEachData)
+
+let newFilterData = data.filter(function(values, index, array){
+    if(typeof values == 'string') {
+        return values
+    }
+})
+
+// console.log(newFilterData)
+
+
+let newSortData = data
+.filter(function(values, index, array){
+    if(typeof values == 'string') {
+        return values
+    }
+})
+.sort(function(a,b){
+    return a.localeCompare(b)
+}).map(function(values, index, array){
+    console.log(values)
+    return values
+})
+
+console.log(newSortData)
+
+
+
+
+// map() -- 
+
+// sort()
+
+// reduce()
+
+// filter()
+
+// forEach()
+
+
+</script>

@@ -1,0 +1,40 @@
+<button onclick="timer()">Start</button>
+<div id="time"></div>
+<script>
+
+      const convertMinintoSec = (time) => {
+          console.log(time.split(':'))
+      }
+      convertMinintoSec('10:15')
+
+     const convertSecondintoTime = (val) => {
+
+        let minutes = Math.floor(val/60)
+        let second = val - (minutes * 60)
+
+        let secondZero = ''
+        let minutesZero = ''
+
+        if(second<9) {
+            secondZero = 0
+        }
+
+        if(minutes<9) {
+            minutesZero = 0
+        }
+ 
+        document.getElementById('time').innerHTML = `${minutesZero}${minutes}:${secondZero}${second}`
+
+     }
+
+     const timer = () => {
+        let time = 0
+        setInterval(() => {
+            time += 1
+          //  console.log(time)
+            convertSecondintoTime(time)
+         //   document.getElementById('time').innerHTML = time
+        }, 100);
+     }
+     
+ </script>

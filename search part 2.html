@@ -1,0 +1,66 @@
+<input type="text" value="" id="searchbox" onchange="searchKeywords()" />
+<script>
+
+    let data = [
+        "Test Product Please do not Purchase this",
+        "test",
+        "G25",
+        "G25 2 Vie",
+        "Cartuccia Paini G35 E.S. EVO C3 0/90° DX",
+        "Cartuccia/Cartridge G25 Joystick - int.5 - or body test this",
+        "kk test",
+        "test 123",
+        "Product 1",
+        "kk testing 123",
+        "Test Product Please do not Purchase this"
+    ]
+
+
+    function searchKeywords() {
+        let keywords = (document.getElementById('searchbox').value).toLowerCase().trim().split(' ')
+
+
+
+       console.log(keywords)
+       let firstSearch = []
+       for(var eachData of data) {
+           let n = eachData.toLowerCase()
+           if(n.search(keywords[0]) >= 0) {
+                firstSearch.push(eachData)
+           }
+       }
+       console.log(firstSearch)
+
+       for(var eachData of firstSearch) {
+           let n = eachData.toLowerCase()
+           if(n.search(keywords[1]) >= 0) {
+                console.log(eachData)
+           }
+       }
+
+
+
+    }
+
+
+    // function getAllSearchResult() {
+
+
+
+    //     fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products')
+    //     .then(res=>res.json())
+    //     .then(ressult=>{
+    //         let allResult = []
+    //         for(var n of ressult.data) {
+    //             allResult.push(n.title)
+    //         }
+    //         return allResult
+    //     })
+    //     .then(data={
+    //         let keywords = 'test'
+    //         searchKeywords(keywords,data)
+    //     })
+    // }
+
+
+</script>

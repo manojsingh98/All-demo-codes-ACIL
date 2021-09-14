@@ -1,0 +1,63 @@
+<script>
+    let one = [{
+        id: 1,
+        name: 'Acil Technologies',
+        year: 2020
+    },{
+        id: 2,
+        name: 'Orange Mantra',
+        year: 2010
+    }]
+
+    let two = [{
+        id: 1,
+        location : 'Gurgaon',
+        state: 'Haryana'
+    },{
+        id: 2,
+        location : 'Delhi',
+        state: 'Haryana'
+    }]
+
+    let company = 'Acil Technologies'
+   // console.log([...data, ...data2])
+
+
+   function dataJoin(x,y) {
+       let finalData = []
+       for(var n of x) {
+         //  console.log(n)
+           for(var p of y) {
+              if(n.id == p.id) {
+
+                // OLD ES5 JAVASRIPT
+                // let newObj = {
+                //     name: n.name,
+                //     location: p.location,
+                //     state: p.state,
+                //     year: n.year
+                // }
+
+                // NEW ES6 Javascript
+                  let newObj = new Object()
+                  newObj.name = n.name
+                  newObj.location = p.location
+                  newObj.state = p.state
+                  newObj.year = n.year
+                  finalData.push(newObj)
+
+                  
+              }
+           }
+       }
+       return finalData
+   }
+
+   for(var eachCompany of dataJoin(one,two)) {
+       if(eachCompany.name == company) {
+           console.log(eachCompany.location)
+       }
+   }
+
+
+</script>

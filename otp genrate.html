@@ -1,0 +1,38 @@
+<script>
+
+
+
+    class student {
+        static getRandomNumber() {
+            console.log(Math.round(Math.random() * 1000 + 1000))
+        }
+        static getCaptcha() {
+            const numbers = '0123456789';
+            const smallCharacters = 'abcdefghijklmnopqrstuvwxyz';
+            const bigCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const specialCharacters = '!@#$%^&*()';
+            return numbers.charAt(Math.floor(Math.random() * 10)) + smallCharacters.charAt(Math.floor(Math.random() * 26)) + numbers.charAt(Math.floor(Math.random() * 10)) + bigCharacters.charAt(Math.floor(Math.random() * 26)) + smallCharacters.charAt(Math.floor(Math.random() * 26)) + specialCharacters.charAt(Math.floor(Math.random() * 10)) + bigCharacters.charAt(Math.floor(Math.random() * 26)) + numbers.charAt(Math.floor(Math.random() * 10));
+        }
+
+        static generateUsername(name) {
+            return name.toLowerCase().replaceAll(' ', '-') + '@' + Math.round(Math.random() * 100 + 100)
+        }
+
+        static getFirstThreeCharatorUsername(name) {
+            return name.split(' ')[0].toLowerCase().replaceAll(' ', '-') + '-' + Math.round(Math.random() * 1000 + 1000)
+        }
+
+        static getState(address) {
+            let addressArray = address.split(',')
+            return addressArray[addressArray.length - 3]
+        }
+
+    }
+
+    student.getRandomNumber()
+    console.log(student.getState('NM 12, Near Ganpati Honda, Old DLF Colony, Sector 14, Gurgaon, Haryana'))
+     console.log(student.generateUsername('manoj singh negi'));
+     console.log(student.getFirstThreeCharatorUsername('its negi'));
+
+
+</script>

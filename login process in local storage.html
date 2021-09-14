@@ -1,0 +1,34 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+
+<button onclick="" id="login">Show Phone No</button>
+ 
+
+
+<script>
+    
+    function checkPhone() {
+        let token = localStorage.getItem('token') || null
+        if(token !== null) {
+            fetch(`https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=getVendor&sessToken=${token}`)
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.status == '200') {
+                    document.write(data.data[0].email)
+                }
+            })
+        }
+
+
+    }
+ 
+
+    //checkPhone()
+</script>

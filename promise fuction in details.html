@@ -1,0 +1,56 @@
+
+<input type="text" placeholder="Enter Roll No" id="rollno" />
+<input type="button" onclick="checkRanking()" value="Check Rank" />
+
+<script>
+
+let selectedStudent = ['12451','32542','98744']
+function getRanking(rollno) {
+    return new Promise(function(resolve, reject){
+        if(selectedStudent.includes(rollno)){
+            resolve()
+        } else {
+            reject()
+        }
+    })
+}
+
+
+function checkRanking() {
+    let rollno = document.getElementById('rollno').value
+    getRanking(rollno)
+    .then(res=> console.log('You are selected'))
+    .catch(err=> console.log('You are Not selected'))
+}
+
+
+// fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products')
+// .then(res=>res.json())
+// .then(data=>console.log(data.data))
+
+// function getResult(marks) {
+//     return new Promise(function(resolve, reject){
+//          if(marks > 75) {
+//              resolve(marks)
+//          } else {
+//             reject()
+//          }
+//     })
+// }
+
+
+// getResult(97)
+// .then(res=>console.log(res))
+// .catch(err=>console.log('Please choose Another Student'))
+
+
+
+
+
+// let data = new Promise(function(res, rej){
+
+// })
+
+
+
+</script>

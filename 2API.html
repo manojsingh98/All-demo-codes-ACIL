@@ -1,0 +1,66 @@
+<script>
+
+    let canidateResult = []
+
+    fetch('https://admin.greatmocks.com/admin/api/great-mocks-apis.php?type=getReport&customer_id=5&set_id=2', {
+        method: 'GET',
+        headers: {
+            "Accept": "application/json",
+            "Token": "bzlQRkxRSXE3eGY0bTNnakFTVWRpaUJkTmMyeDNzSmIxK2Y4VnJRc29TRXYzWWhlWGtDLytFM1FIMVFVeFF0UQ=="
+        },
+        // body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(result => {
+            canidateResult = result.data
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+    setTimeout(() => {
+
+        console.log(canidateResult)
+
+
+        fetch('https://admin.greatmocks.com/admin/api/great-mocks-apis.php?type=questionsbySetIdforAnswer&set_id=2&package_id=1&customer_id=5', {
+            method: 'GET',
+            headers: {
+                "Accept": "application/json",
+                "Token": "bzlQRkxRSXE3eGY0bTNnakFTVWRpaUJkTmMyeDNzSmIxK2Y4VnJRc29TRXYzWWhlWGtDLytFM1FIMVFVeFF0UQ=="
+            },
+            // body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+                let FinalData = []
+                for (var n of result.data) {
+
+
+                    for (var p of canidateResult) {
+                    //    console.log(n.question_id, p.question_id)
+                        if (n.question_id == p.question_id) {
+                            let obj = new Object()
+                            obj.question_title = n.question_title
+                            obj.option_a = n.option_a
+                            obj.correctAnswer = p.correctAnswer
+                            obj.correctAnswer = p.correctAnswer
+                            obj.answer_send = p.answer_send
+                            FinalData.push(obj)
+                        }
+                    }
+
+
+                    
+                }
+
+                console.log('FinalData', FinalData)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+        // console.log('Result',canidateResult)
+    }, 1000)
+</script>

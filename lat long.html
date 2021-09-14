@@ -1,0 +1,54 @@
+<script>
+
+function getAddresFromLatLong(lat, long) {
+    return fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyDoqS12E6MLEewsJfhbSge_jQ4s_GNKwcc`)
+    .then(res=>res.json()).then(data=>console.log('nm'))
+} 
+
+function getLatLong() {
+    navigator.geolocation.getCurrentPosition(function(data){
+        getAddresFromLatLong(data.coords.latitude, data.coords.longitude)
+    })
+}
+
+getLatLong()
+
+// fetch(`https://api.postalpincode.in/pincode/122001`)
+// .then(res=>res.json())
+// .then(function(data){
+//     console.log(data[0])
+//    if(data[0].Status == 'Success') {
+//        // console.log(data)
+//         for(var n of data[0].PostOffice) {
+//             console.log(n.Name)
+//         }
+//    }
+// })
+// .then(data=>{
+//     console.log(data[0]);
+//     if(data[0].Status=='Success'){
+//         console.log(data);
+//         for(var n of data[0].PostOffice){
+//             console.log(n.BranchType);
+//         }
+        
+//     }
+// })
+
+
+
+
+
+
+
+// const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=122001&key=AIzaSyDoqS12E6MLEewsJfhbSge_jQ4s_GNKwcc'
+
+
+// function getGeoLocation(url) {
+//     return fetch(url).then(res=>res.json()).then(data=>console.log(data))
+// }
+
+// getGeoLocation(url)
+
+
+</script>

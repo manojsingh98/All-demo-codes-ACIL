@@ -1,0 +1,31 @@
+<script>
+
+    let API_URL = 'https://www.firstindiapropmart.com/admin/api/galatron-apis.php?'
+
+    function getProductData(url, method, data) {
+        if (method == 'POST') {
+            return fetch(url, {
+                method: method,
+                body: JSON.stringify(data)
+            })
+                .then((res) => res.json())
+               
+                .catch((err) => 'Error Showing')
+        } else {
+            return fetch(url, {
+                method: method
+            })
+                .then((res) => res.json())
+                .catch((err) => 'Error Showing')
+        }
+    }
+
+
+    getProductData(API_URL + 'type=productbyCatId&category_id=1', 'GET', {})
+        .then((res) => console.log(res))
+
+
+    getProductData(API_URL + 'type=categories', 'POST', {})
+        .then((res) => console.log(res))
+
+</script>

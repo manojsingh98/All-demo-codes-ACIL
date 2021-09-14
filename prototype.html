@@ -1,0 +1,66 @@
+ <script>
+
+  
+
+    let obj = {
+        fname: 'Acil',
+        lname: 'Technologies',
+        year: 2019
+    } 
+
+    console.log('Hello')
+    obj.location = 'Gurgaon'
+    obj.fullName = function() {
+        return this.fname + this.lname
+    }
+    
+    console.log(obj)
+
+
+    function Person() {
+        this.fname = 'Acil'
+        this.lname = 'Technologies'
+    }
+
+    Person.prototype.location = 'Gurgaon'
+
+    Person.prototype.fullName = function() {
+        return this.fname + this.lname
+    }
+
+    let Deepak = new Person()
+    
+    // Deepak.fullName = function() {
+    //     return this.fname + this.lname
+    // }
+
+    console.log(Deepak)
+
+    let Sahil = new Person()
+    console.log(Sahil)
+
+
+
+    function dbConnection() {
+        this.username = 'acil',
+        this.password = '123'
+        this.server = 'www.acil.in'
+    }
+
+
+    dbConnection.prototype.showCOnnection = function() {
+        if(this.username == 'acil' && this.password == '123') {
+            return 'You are Now Connected'
+        } else {
+            return 'Connection Error'
+        }
+    }
+
+
+    let acilCOnnection = new dbConnection()
+
+    console.log(acilCOnnection.showCOnnection())
+
+
+
+ </script>

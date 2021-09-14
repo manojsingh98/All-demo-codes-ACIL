@@ -1,0 +1,88 @@
+
+<input type="text" placeholder="Enter Roll No" id="rollno" />
+<input type="button" onclick="checkRanking()" value="Check Rank" />
+
+<script>
+
+let defaultdata = [{},{}]
+
+let path = 'https://www.firstindiapropmart.com/admin/api/galatron-apis.php?'
+let category = '2'
+
+function demoPromiseFx(url, method = 'GET') {
+    return new Promise(function(resolve, reject){
+         return fetch(url, {
+             method: method
+         })
+        .then(res=>res.json())
+        .then(function(data){
+            if(data.status == '200') {
+                resolve(data)
+            } else {
+                reject(defaultdata)
+            }
+        })
+        .catch((err) => reject('There some problem with internet connect, Please refresh again'))
+    })
+}
+
+
+demoPromiseFx(`${path}type=productbyCatId&category_id=${category}`, 'POST')
+.then((res)=>res.data)
+.then((data) => console.log(data))
+.catch((err)=>console.log(err))
+
+demoPromiseFx('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products')
+.then((res)=>res.data)
+.then((data) => console.log(data))
+.catch((err)=>console.log(err))
+
+
+// let selectedStudent = ['12451','32542','98744']
+// function getRanking(rollno) {
+//     return new Promise(function(resolve, reject){
+//         if(selectedStudent.includes(rollno)){
+//             resolve()
+//         } else {
+//             reject()
+//         }
+//     })
+// }
+
+
+// function checkRanking() {
+//     let rollno = document.getElementById('rollno').value
+//     getRanking(rollno)
+//     .then(res=> console.log('You are selected'))
+//     .catch(err=> console.log('You are Not selected'))
+// }
+
+
+
+
+// function getResult(marks) {
+//     return new Promise(function(resolve, reject){
+//          if(marks > 75) {
+//              resolve(marks)
+//          } else {
+//             reject()
+//          }
+//     })
+// }
+
+
+// getResult(97)
+// .then(res=>console.log(res))
+// .catch(err=>console.log('Please choose Another Student'))
+
+
+
+
+
+// let data = new Promise(function(res, rej){
+
+// })
+
+
+
+</script>

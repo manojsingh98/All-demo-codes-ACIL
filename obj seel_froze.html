@@ -1,0 +1,34 @@
+<script>
+ 
+let std_Code = new Object()
+
+std_Code.india = '91'
+std_Code.us = '044'
+std_Code.iraq = '0199'
+
+console.log(Object.keys(std_Code))
+
+
+
+for(var n of Object.keys(std_Code)) {
+    if(n == 'india') {
+        console.log(std_Code[n])
+    }
+}
+
+
+// let newObj = Object.assign(data)
+
+
+// Object.seal(newObj)
+// newObj.location = 'Delhi'
+// newObj.year = 2020
+
+// console.log(newObj)
+
+
+// let new2 = Object.create(data)
+
+// console.log(new2.location)
+
+</script>

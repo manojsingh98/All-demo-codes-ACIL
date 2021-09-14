@@ -1,0 +1,78 @@
+<script>
+class A {
+    start() {
+        console.log('aaaaaaaaaaaaaaaaaaaa')
+    }
+}
+
+
+class getApiResult {
+    fetchProductData() {
+        return fetch('https://admin.greatmocks.com/admin/api/great-mocks-apis.php?type=products').then(res=>res.json()).then(result=>result.data)
+    }
+    fetchCategoriesData(){
+        return new Promise(function(res, rej) {
+            return fetch('https://admin.greatmocks.com/admin/api/great-mocks-apis.php?type=setsbyPackageId&package_id=2').then(res=>res.json()).then(result=>res(result.data))
+        })
+    }
+}
+class filterProductData extends getApiResult {
+    filterProd() {
+        return null
+    }
+}
+
+class productList extends filterProductData, A {
+    showProduct() {
+        this.fetchProductData().then(result=>console.log(result))
+    }
+}
+
+
+let newData = new productList()
+newData.showProduct()
+ 
+
+
+
+
+
+    //     constructor(eng,hindi,math) {
+    //         this.eng = eng
+    //         this.hindi = hindi
+    //         this.math = math
+    //         this.getArgements = () => {
+    //             return arguments.length
+    //         }
+    //     }
+    //     getTotal() {
+    //       //  console.log(arguments.length)
+    //         return this.eng + this.hindi + this.math
+    //     }
+    //     getPercentage() {
+    //         return this.getTotal()/this.getArgements()
+    //     }
+    //     getFinalResult() {
+    //         return null
+    //     }
+    // }
+
+    // class getSelection extends getResult {
+    //     constructor(eng,hindi,math) {
+    //         super(eng,hindi,math)
+    //     }
+    //     getPercentageWiseSelection() {
+    //         console.log(this.getArgements())
+    //         if(this.getPercentage() > 75) {
+    //             console.log('Selected')
+    //         } else {
+    //             console.log('Rejected')
+    //         }
+    //     }
+    // }
+
+    // let student_1 = new getSelection(80,90,90)
+    // student_1.getPercentageWiseSelection()
+
+ 
+</script>

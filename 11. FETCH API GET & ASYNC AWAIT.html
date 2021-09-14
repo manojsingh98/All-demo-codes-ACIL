@@ -1,0 +1,130 @@
+<script>
+
+    // let myProductApiData = async function() {
+    //     return fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products')
+    // }
+
+    // let myCategoryApiData = async function() {
+    //     return fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=categories')
+    // }
+
+    
+     
+    // fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=product')
+    // .then((res)=>{
+    //     return res.json()
+    // })
+    // .then(async (data)=>{
+    //     let msg = data.status
+    //     let finalData = await data.data
+    //     let newData = await finalData[0]
+    //     await console.log(newData)
+    //     console.log(finalData)
+    // })
+    // .catch((err)=>console.log('My error is : - ' + err))
+
+
+
+
+    
+    // fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=categories')   
+    // .then(res=>console.log(res))
+    // .then((data)=> console.log(data))
+
+    
+
+    // let a = async () => 2+2
+ 
+    // console.log(a())
+
+
+    // let apiData = async function() {
+    //     return 10 + 10
+    // }
+
+    // apiData()
+    // .then(async function(result) {
+    //    await console.log(result)
+    //    let n = await result + 2
+    //    await console.log(n)
+    // })
+
+
+   // console.log(apiData())
+
+
+
+    // console.log('start')
+    
+    // var x = 10 + 10
+    // var n = () => 10 + 10
+    // var y = function() {
+    //     return 10 + 10
+    // }
+    // console.log(x)
+    // setTimeout(()=>{
+    //     console.log(y())
+    // })
+    // console.log('hi')
+
+
+    // myCategoryApiData()
+    // .then((res)=> res.json())
+    // .then((data)=> console.log(data))
+
+
+
+//     fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products')
+// .then(res=>res.json())
+// .then(function(manoj){
+//     console.log(manoj)
+
+//     let response = manoj.data
+//     console.log(response);
+//     // document.write('<ul>')
+//     // for(var x of response) {
+//     //    document.write('<li>' + x.title + '</li>')
+//     // }
+//     // document.write('</ul>')
+// })
+
+// fetch('https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products')
+// .then(res=>res.json())
+// .then(demo=>console.log(demo.data))
+// .then(function (demo) {
+//     console.log(demo);
+//     let x = demo.data
+//     console.log(x);
+//     for(var y of x){
+//         console.log(y.title);
+//     }
+// })
+
+let url = 'https://www.firstindiapropmart.com/admin/api/galatron-apis.php?type=products'
+
+fetch (url)
+.then(res=>res.json())
+.then(response=>console.log(response))
+
+
+
+
+
+
+
+// fetch('https://reqres.in/api/products/3')
+// .then(res=>res.json())
+// .then(function(abc){
+//     console.log(abc.data.year);
+// })
+
+
+
+
+
+
+
+
+
+
+</script>
